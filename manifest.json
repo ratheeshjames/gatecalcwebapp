@@ -1,0 +1,16 @@
+{
+    "name": "Gate Calc",
+    "short_name": "GateCalc",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#2A3443",
+    "description": "Gate Virtual Calculator Web App Experiance",    
+    "theme_color": "#2A3443",    
+    "icons": [
+      {
+        "src": "./img/icons/tcsappicon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }

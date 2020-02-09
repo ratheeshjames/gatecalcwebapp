@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+<meta content="text/html;charset=UTF-8" http-equiv="content-type"/>
+<meta content="width=device-width,user-scalable=no, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" name="viewport">
+<head>
+    <title>SCIENTIFIC CALCULATOR</title>
+    <link href="css/calclayout.css" rel="stylesheet" type="text/css"/>
+    <link rel="manifest" href="./manifest.json">
+    <script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="js/oscZenoedited.js" type="text/javascript"></script>
+    <script src="js/oscZenoeditedV.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <meta content="IE=8" http-equiv="X-UA-Compatible"/>
+    <style type="text/css">
+        @media only screen and (orientation: portrait) {
+            #portrait {
+                display: flex;
+            }
+
+            #landscape {
+                display: none;
+            }
+        }
+
+        @media only screen and (orientation: landscape) {
+            #portrait {
+                display: none;
+            }
+
+            #landscape {
+                display: flex;
+            }
+        }
+    </style>
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="./img/icons/tcsappiconmin.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-status-bar-style" content="white" />
+    <meta name="mobile-web-app-title" content="Gate Calc" />
+</head>
+<body>
+    <div class="alert" role="alert" hidden>
+        Your browser does not support ServiceWorker. The app will not be available
+        offline.
+      </div>
+<!-- LANDSCAPE VIEW CODE BELOW  -->
+<div id="landscape">
+    <div class="ui-widget-content calc_container" id="keyPad">
+        <div id="mainContentArea">
+            <input class="keyPad_TextBox1" id="keyPad_UserInput1" readonly type="text"/>
+            <div class="text_container">
+                <input class="keyPad_TextBox" id="keyPad_UserInput" maxlength="30" readonly type="text"/>
+            </div>
+            <div class="left_sec">
+                <!-- ROW 1 LANDSCAPE-->
+                <div class="row1">
+                    <a class="keyPad_btnBinaryOp" href="#nogo" id="keyPad_btnMod">mod</a>
+                    <div class="degree_radian">
+                        <input checked="checked" name="degree_or_radian" type="radio" value="deg">Deg</input>
+                        <input name="degree_or_radian" style="margin-left: 1.5vw" type="radio" value="rad">Rad</input>
+                    </div>
+                    <a class="memoryhide" href="#nogo" id="memory">M</a>
+                    <a class="keyPad_btnConst" href="#nogo" id="keyPad_btnEr" style="visibility:hidden;">e</a>
+                    <a class="keyPad_btnConst" href="#nogo" id="keyPad_btnE" style="visibility:hidden;">e</a>
+                    <a class="keyPad_btnMemoryOp" href="#nogo" id="keyPad_MC">MC</a>
+                    <a class="keyPad_btnMemoryOp" href="#nogo" id="keyPad_MR">MR</a>
+                    <a class="keyPad_btnMemoryOp" href="#nogo" id="keyPad_MS">MS</a>
+                    <a class="keyPad_btnMemoryOp" href="#nogo" id="keyPad_M+">M+</a>
+                    <a class="keyPad_btnMemoryOp" href="#nogo" id="keyPad_M-">M-</a></div>
+                <!-- ROW 2 LANDSCAPE-->
+                <div class="row2">
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnSinH">sinh</a>
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnCosinH">cosh</a>
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnTgH">tanh</a>
+                    <a class="keyPad_btnBinaryOp" href="#nogo" id="keyPad_EXP">Exp</a>
+                    <a class="keyPad_btnBinaryOp" href="#nogo" id="keyPad_btnOpen">(</a>
+                    <a class="keyPad_btnBinaryOp " href="#nogo" id="keyPad_btnClose">)</a>
+                    <a class="keyPad_btnCommand" href="#nogo" id="keyPad_btnBack"><div>&#8592;</div></a>
+                    <a class="keyPad_btnCommand" href="#nogo" id="keyPad_btnAllClr">C</a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnInverseSign">+/-</a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnSquareRoot"><div>&#8730;</div></a>
+                </div>
+                <!-- ROW 3 LANDSCAPE-->
+                <div class="row3">
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnAsinH"><span class='baseele'>sinh</span><span class='superscript'>-1</span></a>
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnAcosH"><span class='baseele'>cosh</span><span class='superscript'>-1</span></a>
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnAtanH"><span class='baseele'>tanh</span><span class='superscript'>-1</span></a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnLogBase2"><span class='baseele'>log</span><span class='subscript'>2</span><span class='baseele'>x</span></a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnLn">ln</a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnLg">log</a>
+                    <a class="keyPad_btnNumeric" href="#nogo" id="keyPad_btn7">7</a>
+                    <a class="keyPad_btnNumeric" href="#nogo" id="keyPad_btn8">8</a>
+                    <a class="keyPad_btnNumeric" href="#nogo" id="keyPad_btn9">9</a>
+                    <a class="keyPad_btnBinaryOp" href="#nogo" id="keyPad_btnDiv">/</a>
+                    <a class="keyPad_btnBinaryOp" href="#nogo" id="keyPad_%">%</a></div>
+                <!-- ROW 4 LANDSCAPE-->
+                <div class="row4">
+                    <a class="keyPad_btnConst" href="#nogo" id="keyPad_btnPi">&#960;</a>
+                    <a class="keyPad_btnConst" href="#nogo" id="keyPad_btnEe">e</a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnFact">n!</a>
+                    <a class="keyPad_btnBinaryOp " href="#nogo" id="keyPad_btnYlogX"><span class='baseele'>log</span><span class='subscript'>y</span><span class='baseele'>x</span></a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnExp"><span class='baseele'>e</span><span class='superscript'>x</span></a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btn10X"><span class='baseele'>10</span><span class='superscript'>x</span></a>
+                    <a class="keyPad_btnNumeric" href="#nogo" id="keyPad_btn4">4</a>
+                    <a class="keyPad_btnNumeric" href="#nogo" id="keyPad_btn5">5</a>
+                    <a class="keyPad_btnNumeric " href="#nogo" id="keyPad_btn6">6</a>
+                    <a class="keyPad_btnBinaryOp" href="#nogo" id="keyPad_btnMult"><div>*</div></a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnInverse"><span class='baseele'>1/x</span></a></div>
+                <!-- ROW 5 LANDSCAPE-->
+                <div class="row5">
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnSin">sin</a>
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnCosin">cos</a>
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnTg">tan</a>
+                    <a class="keyPad_btnBinaryOp" href="#nogo" id="keyPad_btnYpowX"><span class='baseele'>x</span><span class='superscript'>y</span></a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnCube"><span class='baseele'>x</span><span class='superscript'>3</span></a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnSquare"><span class='baseele'>x</span><span class='superscript'>2</span></a>
+                    <a class="keyPad_btnNumeric" href="#nogo" id="keyPad_btn1">1</a>
+                    <a class="keyPad_btnNumeric" href="#nogo" id="keyPad_btn2">2</a>
+                    <a class="keyPad_btnNumeric" href="#nogo" id="keyPad_btn3">3</a>
+                    <a class="keyPad_btnBinaryOp" href="#nogo" id="keyPad_btnMinus"><div>-</div></a>
+                    <a class="keyPad_btnCommand" href="#nogo" id="keyPad_btnEnter">=</a>
+                </div>
+                <!-- ROW 6 LANDSCAPE-->
+                <div class="row6">
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnAsin"><span class='baseele'>sin</span><span class='superscript'>-1</span></a>
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnAcos"><span class='baseele'>cos</span><span class='superscript'>-1</span></a>
+                    <a class="keyPad_btnUnaryOp min" href="#nogo" id="keyPad_btnAtan"><span class='baseele'>tan</span><span class='superscript'>-1</span></a>
+                    <a class="keyPad_btnBinaryOp" href="#nogo" id="keyPad_btnYrootX"><span class='superscript'>y</span><span class='baseele'>&#8730;x</span></a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnCubeRoot">&#8731;</a>
+                    <a class="keyPad_btnUnaryOp" href="#nogo" id="keyPad_btnAbs"><span class='baseele'>|x|</span></a>
+                    <a class="keyPad_btnNumeric" href="#nogo" id="keyPad_btn0">0</a>
+                    <a class="keyPad_btnNumeric " href="#nogo" id="keyPad_btnDot">.</a>
+                    <a class="keyPad_btnBinaryOp" href="#nogo" id="keyPad_btnPlus">+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PORTRAIT VIEW CODE BELOW  -->
+<div id="portrait">
+    <div class="ui-widget-content calc_container" id="keyPadV">
+        <div id="mainContentAreaV">
+            <input class="keyPadV_TextBox1V" id="keyPadV_UserInput1V" readonly type="text" />
+            <div class="text_container">
+                <input class="keyPadV_TextBoxV" id="keyPadV_UserInputV" maxlength="30" readonly type="text"/>
+            </div>
+            <div class="left_sec">
+                <!-- ROW 1 PORTRAIT-->
+                <div class="row1v">
+                    <v class="keyPadV_btnMemoryOp" href="#nogo" id="keyPadV_M+">M+</v>
+                    <v class="keyPadV_btnMemoryOp" href="#nogo" id="keyPadV_M-">M-</v>
+                    <v class="keyPadV_btnMemoryOp" href="#nogo" id="keyPadV_MR">MR</v>
+                    <v class="keyPadV_btnMemoryOp" href="#nogo" id="keyPadV_MS">MS</v>
+                    <v class="keyPadV_btnMemoryOp" href="#nogo" id="keyPadV_MC" style = "margin-right: 0px">MC</v>
+                </div>
+                <!-- ROW 2 PORTRAIT-->
+                <div class="row2v">
+                    <v class="keyPadV_btnUnaryOp" href="#nogo" id="keyPadV_btnInverse"><span class='baseele'>1/x</span></v>
+                    <v class="keyPadV_btnUnaryOp" href="#nogo" id="keyPadV_btnSquareRoot"><div>&#8730;</div></v>
+                    <v class="keyPadV_btnUnaryOp" href="#nogo" id="keyPadV_btnSquare"><span class='baseele'>x</span><span class='superscript'>2</span></v>
+                    <v class="keyPadV_btnUnaryOp" href="#nogo" id="keyPadV_btnCube"><span class='baseele'>x</span><span class='superscript'>3</span></v>
+                    <v class="keyPadV_btnBinaryOp" href="#nogo" id="keyPadV_btnYpowX" style = "margin-right: 0px"><span class='baseele'>x</span><span class='superscript'>y</span></v>
+                </div>
+                <!-- ROW 3 PORTRAIT-->
+                <div class="row3v">
+                    <v class="keyPadV_btnUnaryOp" href="#nogo" id="keyPadV_btnFact">n!</v>
+                    <v class="keyPadV_btnUnaryOp" href="#nogo" id="keyPadV_btnLn">ln</v>
+                    <v class="keyPadV_btnUnaryOp" href="#nogo" id="keyPadV_btnLg">log</v>
+                    <v class="keyPadV_btnBinaryOp " href="#nogo" id="keyPadV_btnYlogX"><span
+                            class='baseele'>log</span><span class='subscript'>y</span><span class='baseele'>x</span></v>
+                    <v class="keyPadV_btnUnaryOp" href="#nogo" id="keyPadV_btnExp" style = "margin-right: 0px"><span class='baseele'>e</span><span class='superscript'>x</span></v>
+                </div>
+                <!-- ROW 4 PORTRAIT-->
+                <div class="row4v">
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnSin">sin</v>
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnAsin"><span class='baseele'>sin</span><span class='superscript'>-1</span></v>
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnSinH">sinh</v>
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnAsinH"><span class='baseele'>sinh</span><span class='superscript'>-1</span></v>
+                    <v class="keyPadV_btnConst" href="#nogo" id="keyPadV_btnEe" style = "margin-right: 0px">e</v>
+                </div>
+                <!-- ROW 5 PORTRAIT-->
+                <div class="row5v">
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnCosin">cos</v>
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnAcos"><span class='baseele'>cos</span><span class='superscript'>-1</span></v>
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnCosinH">cosh</v>
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnAcosH"><span class='baseele'>cosh</span><span class='superscript'>-1</span></v>
+                    <v class="keyPadV_btnConst" href="#nogo" id="keyPadV_btnPi" style = "margin-right: 0px">&#960;</v>
+                </div>
+                <!-- ROW 6 PORTRAIT-->
+                <div class="row6v">
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnTg">tan</v>
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnAtan"><span class='baseele'>tan</span><span class='superscript'>-1</span></v>
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnTgH">tanh</v>
+                    <v class="keyPadV_btnUnaryOp min" href="#nogo" id="keyPadV_btnAtanH"><span class='baseele'>tanh</span><span class='superscript'>-1</span></v>
+                    <v class="keyPadV_btnConstDEG" href="#nogo" id="keyPadV_btnDegRad" style = "margin-right: 0px">rad</v>
+                </div>
+                <!-- ROW 7 PORTRAIT-->
+                <div class="row7v">
+                    <v class="keyPadV_btnUnaryOp" href="#nogo" id="keyPadV_btnInverseSign"
+                       style = "background: none repeat scroll 0 0 #e74c3c;
+                       color: #fff;
+                       border-color: #c0392b;">+/-</v>
+                    <v class="keyPadV_btnBinaryOp" href="#nogo" id="keyPadV_btnOpen">(</v>
+                    <v class="keyPadV_btnBinaryOp " href="#nogo" id="keyPadV_btnClose">)</v>
+                    <v class="keyPadV_btnBinaryOp" href="#nogo" id="keyPadV_%">%</v>
+                    <v class="keyPadV_btnCommand" href="#nogo" id="keyPadV_btnAllClr"
+                       style = "background: none repeat scroll 0 0 #e74c3c;
+                       color: #fff;
+                       border-color: #c0392b;
+                       margin-right: 0px">C</v>
+                </div>
+                <!-- ROW 8 PORTRAIT-->
+                <div class="row8v">
+                    <v class="keyPadV_btnNumeric" href="#nogo" id="keyPadV_btn7">7</v>
+                    <v class="keyPadV_btnNumeric" href="#nogo" id="keyPadV_btn8">8</v>
+                    <v class="keyPadV_btnNumeric" href="#nogo" id="keyPadV_btn9">9</v>
+                    <v class="keyPadV_btnBinaryOp" href="#nogo" id="keyPadV_btnDiv">/</v>
+                    <v class="keyPadV_btnCommand" href="#nogo" id="keyPadV_btnBack" style="background: none repeat scroll 0 0 #e74c3c;
+                       color: #fff;
+                       border-color: #c0392b;
+                       margin-right: 0px">&#8592;</v>
+                </div>
+                <!-- ROW 9 PORTRAIT-->
+                <div class="row9v" style="height:6.7vh">
+                    <v class="keyPadV_btnNumeric" href="#nogo" id="keyPadV_btn4">4</v>
+                    <v class="keyPadV_btnNumeric" href="#nogo" id="keyPadV_btn5">5</v>
+                    <v class="keyPadV_btnNumeric" href="#nogo" id="keyPadV_btn6">6</v>
+                    <v class="keyPadV_btnBinaryOp" href="#nogo" id="keyPadV_btnMult"><div>*</div></v>
+                    <v class="keyPadV_btnCommand" href="#nogo" id="keyPadV_btnEnter" style=" background: none repeat scroll 0 0 #2ecc71;
+                        border-color: #27ae60; 	position: relative; 	vertical-align: top;     color: #fff;
+                        display: flex;height: 21.8vh; z-index:1;    align-content: center; 	align-items: center;
+                        justify-content: center; margin-right: 0px">=</v>
+                </div>
+                <!-- ROW 10 PORTRAIT-->
+                <div class="row10v">
+                    <v class="keyPadV_btnNumeric" href="#nogo" id="keyPadV_btn1">1</v>
+                    <v class="keyPadV_btnNumeric" href="#nogo" id="keyPadV_btn2">2</v>
+                    <v class="keyPadV_btnNumeric" href="#nogo" id="keyPadV_btn3">3</v>
+                    <v class="keyPadV_btnBinaryOp" href="#nogo" id="keyPadV_btnMinus" style = "margin-right: 0px"><div>-</div></v>
+                </div>
+                <!-- ROW 11 PORTRAIT-->
+                <div class="row11v">
+                    <v class="keyPadV_btnUnaryOp" href="#nogo" id="keyPadV_btn10X"><span class='baseele'>10</span><span class='superscript'>x</span></v>
+                    <v class="keyPadV_btnNumeric" href="#nogo" id="keyPadV_btn0">0</v>
+                    <v class="keyPadV_btnNumeric " href="#nogo" id="keyPadV_btnDot">.</v>
+                    <v class="keyPadV_btnBinaryOp" href="#nogo" id="keyPadV_btnPlus" style = "margin-right: 0px">+</v>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>
+
+
